@@ -7,7 +7,7 @@
 using namespace std;
 void pause()
 {
-    cout << endl << "Pritisnite enter za nastavak...";
+    cout << endl << "Pritisnite enter za nastavak!";
     string dummy;
     cin.ignore();
     getline(cin, dummy);
@@ -25,10 +25,11 @@ int main()
         cout << "Dobrodosli u I-dnevnik\n";
         cout << "1. Unos ucenika " << endl;
         cout << "2. Ispis ucenika " << endl;
-        cout << "3. Unos novih ocjena " << endl;
-        cout << "4. Slucajni odabir " << endl;
-        cout << "5. Brisanje ucenika " << endl;
-        cout << "6. Izlaz iz programa " << endl;
+        cout << "3. Unos predmeta " << endl;
+        cout << "4. Unos novih ocjena " << endl;
+        cout << "5. Slucajni odabir " << endl;
+        cout << "6. Brisanje ucenika " << endl;
+        cout << "7. Izlaz iz programa " << endl;
         cout << "Vas odabir je: " <<endl ;
         cin >> izbor;
         if (izbor == 1)
@@ -44,11 +45,11 @@ int main()
         {
             for (int i = 0; i < br; i++)
             {
-                cout << "Redni broj mucenika: " << redni[i] << endl;
-                cout << "Ime i Prezime mucenuka: " << prezimeIme[i] << endl<< endl;
+                cout << "Redni broj ucenika: " << redni[i] << endl;
+                cout << "Ime i Prezime ucenuka: " << prezimeIme[i] << endl << endl;
             }
         }
-        else if (izbor == 3)
+        else if(izbor == 3)
         {
 
         }
@@ -61,6 +62,10 @@ int main()
 
         }
         else if (izbor == 6)
+        {
+
+        }
+        else if (izbor == 7)
         {
             cout << "Izlaz iz programa!";
             break;
