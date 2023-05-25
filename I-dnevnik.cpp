@@ -63,7 +63,25 @@ int main()
         }
         else if (izbor == 6)
         {
-
+			unsigned long long int unosRacun;
+			{
+				cout << "Unesite broj racuna: ";
+				cin >> unosRacun;
+				int makni = find(redni, redni + br, unosRacun) - redni;
+				if (makni == *redni + br)
+				{
+					cout << "Broj racuna ne postoji." << endl;
+				}
+				else
+				{
+					for (int i = makni; i < br - 1; i++)
+					{
+						redni[i] = redni[i + 1];
+						prezimeIme[i] = prezimeIme[i + 1];
+					}
+					br--;
+				}
+			}
         }
         else if (izbor == 7)
         {
