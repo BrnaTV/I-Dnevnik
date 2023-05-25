@@ -63,11 +63,11 @@ int main()
         }
         else if (izbor == 6)
         {
-			unsigned long long int unosRacun;
+			unsigned long long int unosUcenik;
 			{
 				cout << "Unesite broj racuna: ";
-				cin >> unosRacun;
-				int makni = find(redni, redni + br, unosRacun) - redni;
+				cin >> unosUcenik;
+				int makni = find(redni, redni + br, unosUcenik) - redni;
 				if (makni == *redni + br)
 				{
 					cout << "Broj racuna ne postoji." << endl;
