@@ -17,6 +17,7 @@ int main()
     unsigned long long int* redni = new unsigned long long int[1000];
     string* prezimeIme = new string[1000];
     string* rubrika = new string[1000];
+    string* predmet = new string[1000];
     int izbor;
     int br = 0;
     while (1)
@@ -46,12 +47,17 @@ int main()
             for (int i = 0; i < br; i++)
             {
                 cout << "Redni broj ucenika: " << redni[i] << endl;
-                cout << "Ime i Prezime ucenuka: " << prezimeIme[i] << endl << endl;
+                cout << "Ime i Prezime ucenika: " << prezimeIme[i] << endl;
+
             }
         }
         else if(izbor == 3)
         {
-
+            cin.ignore();
+            cout << "Koliko predmeta zelite upisati?: ";
+            cout << "Unesite predmete: "<<endl;
+            getline(cin, predmet[br]);
+            br++;
         }
         else if (izbor == 4)
         {
