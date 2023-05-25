@@ -25,7 +25,7 @@ int main()
         system("cls");
         cout << "Dobrodosli u I-dnevnik\n";
         cout << "1. Unos ucenika " << endl;
-        cout << "2. Ispis ucenika " << endl;
+        cout << "2. Ispis svih ucenika " << endl;
         cout << "3. Unos predmeta " << endl;
         cout << "4. Unos novih ocjena " << endl;
         cout << "5. Slucajni odabir " << endl;
