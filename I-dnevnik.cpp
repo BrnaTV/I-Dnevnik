@@ -33,7 +33,7 @@ int main()
         cout << "5. Slucajni odabir " << endl;
         cout << "6. Brisanje ucenika " << endl;
         cout << "7. Izlaz iz programa " << endl;
-        cout << "Vas odabir je: " <<endl ;
+        cout << "Vas odabir je: " ;
         cin >> izbor;
         if (izbor == 1)
         {
@@ -83,12 +83,12 @@ int main()
         {
 			unsigned long long int unosUcenik;
 			{
-				cout << "Unesite re: ";
+				cout << "Unesite redni broj ucenika: ";
 				cin >> unosUcenik;
 				int makni = find(redni, redni + br, unosUcenik) - redni;
 				if (makni == *redni + br)
 				{
-					cout << "Broj racuna ne postoji." << endl;
+					cout << "Redni broj ucenika ne postoji." << endl;
 				}
 				else
 				{
