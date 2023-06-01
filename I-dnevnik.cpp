@@ -4,6 +4,7 @@
 #include <utility>
 #include <cmath>
 #include <string>
+#include <cstdlib>
 using namespace std;
 void pause()
 {
@@ -20,6 +21,7 @@ int main()
     string* predmet = new string[1000];
     int izbor;
     int br = 0;
+    srand(time(NULL));
     while (1)
     {
         system("cls");
@@ -47,7 +49,7 @@ int main()
             for (int i = 0; i < br; i++)
             {
                 cout << "Redni broj ucenika: " << redni[i] << endl;
-                cout << "Ime i Prezime ucenika: " << prezimeIme[i] << endl;
+                cout << "Ime i Prezime ucenika: " << prezimeIme[i] << endl << endl;
 
             }
         }
@@ -65,13 +67,23 @@ int main()
         }
         else if (izbor == 5)
         {
-
+			if (br > 0)
+			{
+				int slucajniUcenik = rand() % br;
+                cout << "Slucajni odabir je odabrao:" << endl;
+				cout << redni[slucajniUcenik]<<". ";
+				cout << prezimeIme[slucajniUcenik] << endl;
+			}
+			else
+			{
+				cout << "Nema unesenih ucenika." << endl;
+			}
         }
         else if (izbor == 6)
         {
 			unsigned long long int unosUcenik;
 			{
-				cout << "Unesite broj racuna: ";
+				cout << "Unesite re: ";
 				cin >> unosUcenik;
 				int makni = find(redni, redni + br, unosUcenik) - redni;
 				if (makni == *redni + br)
