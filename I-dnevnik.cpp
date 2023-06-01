@@ -48,22 +48,55 @@ int main()
         {
 			if (br > 0)
 			{
-				sort(redni, redni + br);
-
 				for (int i = 0; i < br; i++)
 				{
 					cout << "Redni broj ucenika: " << redni[i] << endl;
 					cout << "Ime i Prezime ucenika: " << prezimeIme[i] << endl;
+
+					if (!predmeti[i].empty())
+					{
+						cout << "Predmeti: ";
+						for (const string& predmet : predmeti[i])
+						{
+							cout << predmet << ", ";
+						}
+						cout << endl;
+					}
 				}
+			}
+			else
+			{
+				cout << "Nema unesenih ucenika." << endl;
 			}
         }
         else if(izbor == 3)
         {
-            cin.ignore();
-            cout << "Koliko predmeta zelite upisati?: ";
-            cout << "Unesite predmete: "<<endl;
-            getline(cin, predmet[br]);
-            br++;
+			cin.ignore();
+			cout << "Unesite redni broj ucenika: ";
+			unsigned long long int redniBroj;
+			cin >> redniBroj;
+			cin.ignore();
+
+			int index = find(redni, redni + br, redniBroj) - redni;
+			if (index == br)
+			{
+				cout << "Redni broj ucenika ne postoji." << endl;
+			}
+			else
+			{
+				cout << "Koliko predmeta zelite upisati?: ";
+				int brojPredmeta;
+				cin >> brojPredmeta;
+				cin.ignore();
+
+				cout << "Unesite predmete: " << endl;
+				for (int i = 0; i < brojPredmeta; i++)
+				{
+					string predmet;
+					getline(cin, predmet);
+					predmeti[index].push_back(predmet);
+				}
+			}
         }
         else if (izbor == 4)
         {
