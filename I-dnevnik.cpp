@@ -46,12 +46,16 @@ int main()
         }
         else if (izbor == 2)
         {
-            for (int i = 0; i < br; i++)
-            {
-                cout << "Redni broj ucenika: " << redni[i] << endl;
-                cout << "Ime i Prezime ucenika: " << prezimeIme[i] << endl << endl;
+			if (br > 0)
+			{
+				sort(redni, redni + br);
 
-            }
+				for (int i = 0; i < br; i++)
+				{
+					cout << "Redni broj ucenika: " << redni[i] << endl;
+					cout << "Ime i Prezime ucenika: " << prezimeIme[i] << endl;
+				}
+			}
         }
         else if(izbor == 3)
         {
