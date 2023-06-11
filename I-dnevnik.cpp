@@ -5,6 +5,7 @@
 #include <cmath>
 #include <string>
 #include <cstdlib>
+#include <fstream>
 using namespace std;
 
 void pause()
@@ -36,7 +37,9 @@ int main()
 		cout << "4. Unos novih ocjena" << endl;
 		cout << "5. Ispis ocjena" << endl;
 		cout << "6. Slucajni odabir" << endl;
-		cout << "7. Izlaz iz programa" << endl;
+		cout << "7. Spremi ucenike u tekst datoteku" << endl;
+		cout << "8. Spremi ucenike u binarnu datoteku" << endl;
+		cout << "9. Izlaz iz programa" << endl;
 		cout << "Vas odabir je: ";
 		cin >> izbor;
 		if (izbor == 1)
@@ -198,6 +201,27 @@ int main()
 			cout << slucajniUcenik << ". " << ucenici[slucajniUcenik] << endl;
 		}
 		else if (izbor == 7)
+		{
+			fstream datoteka;
+			datoteka.open("ucenici.txt", ios::out);
+			for (int i = 0; i < brojUcenika; i++) {
+				datoteka << ucenici[i] << endl;
+			}
+			datoteka.close();
+			cout << "Ucenici spremljeni";
+		}
+		else if (izbor == 8)
+		{
+			fstream datoteka;
+			datoteka.open("ucenici.bin", ios::binary | ios::out);
+			for (int i = 0; i < brojUcenika; i++) {
+				string ucenik = ucenici[i];
+				datoteka.write((char*)&ucenik, sizeof(ucenik));
+			}
+			datoteka.close();
+			cout << "Ucenici spremljeni";
+		}
+		else if (izbor == 9)
 		{
 			cout << "Izlaz iz programa!";
 			break;
